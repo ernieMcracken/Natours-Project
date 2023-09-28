@@ -1,0 +1,74 @@
+@use "../abstracts/variables";
+
+/* set font size on body element - it is inherited from here by child elements */
+body {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: variables.$font-size-default;
+    line-height: 1.7;
+    color: variables.$color-grey-dark;
+   
+}
+
+.heading-primary {
+    
+    color: variables.$color-white;
+    text-transform: uppercase;
+    backface-visibility: hidden;
+    margin-bottom: 6rem;
+
+
+    &--main {
+        display: block;
+        font-size: variables.$font-size-h1;
+        letter-spacing: 3.5rem;
+        font-weight: 400;
+        animation-name: moveInLeft;
+        animation-duration: 1s;
+    }
+
+    &--sub {
+        display: block;
+        font-size: 2rem;
+        font-weight: 700;
+        letter-spacing: 1.7rem;
+        animation-name: moveInRight;
+        animation-duration: 1s;
+    
+    }
+}
+
+.heading-secondary {
+
+    display: inline-block;
+    font-size: variables.$font-size-h2;
+    font-weight: 700;
+    text-transform: uppercase;
+    //font filled with linear gradient
+    background-image: linear-gradient(to right, variables.$color-primary-light, variables.$color-primary-dark); 
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    transition: all .2s;
+    letter-spacing: .2rem;
+
+    &:hover {
+        transform: skewY(2deg) skewX(5deg);
+        text-shadow: .5rem 1rem 2rem rgba(variables.$color-black, .2);
+    }
+
+}
+
+.heading-tertiary {
+    font-size: variables.$font-size-default;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.paragraph {
+    font-size: 1.4rem;
+    
+    &:not(:last-child) {
+        margin-bottom: 3rem;
+    }
+}

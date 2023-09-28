@@ -1,0 +1,99 @@
+@use "../abstracts/variables";
+
+.btn {
+
+    &:link, &:visited {
+        display: inline-block;
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: 1.5rem 4rem;
+        border-radius: 10rem;
+        transition: all .2s;
+        position: relative;
+    }
+
+    &:hover {
+        transform: translateY(-.3rem);
+        box-shadow: variables.$box-shadow-hover;
+
+        &::after {
+            transform: scaleX(1.5) scaleY(2);
+            opacity: 0;
+            transition: all .4s;
+        }
+    }
+
+    &:active {
+        transform: translateY(-.1rem);
+        box-shadow: variables.$box-shadow-active;
+    }
+    
+    &::after {
+        /* needs content and display or it will not show up */
+        content: "";
+        display: inline-block;
+        /* after is a child of the element */
+        height: 100%;
+        width: 100%;
+        border-radius: 10rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        
+    }
+    
+    &--white {
+        color: variables.$color-grey-dark;
+        background-color: variables.$color-white;
+    
+        &::after {
+            background-color: variables.$color-white;
+        }
+    }
+
+    &--green {
+        color: variables.$color-white;
+        background-image: linear-gradient(to right bottom, variables.$color-primary-light, variables.$color-primary-dark);
+
+        &::after {
+            background-image: linear-gradient(to right bottom, variables.$color-primary-light, variables.$color-primary-dark);
+        }
+    }
+    
+    &--animated {
+        animation: moveInBottom .5s ease-out .75s;
+        /* apply styles from animation 0% automatically */
+        animation-fill-mode: backwards;
+    } 
+
+}
+
+
+.btn-text {
+
+    &:link, &:visited {
+        display: inline-block;
+        color: variables.$color-primary;
+        text-decoration: none;
+        padding-bottom: .5rem;
+        border-bottom: .1rem solid variables.$color-primary;
+        font-size: variables.$font-size-default;
+        transition: all .1s;
+    }
+
+   
+    &:hover {
+        background-color: variables.$color-primary;
+        color: variables.$color-white;
+        box-shadow: variables.$box-shadow-hover;
+        transform: translateY(-.2rem);
+
+    }
+
+    &:active {
+        box-shadow: variables.$box-shadow-active;
+        transform: translateY(0);
+    }
+
+}

@@ -1,0 +1,19 @@
+/* A basic CSS reset */
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    /* set root font-size for rem measurements */
+    /* font-size: 10px; works but is bad practice */
+    /* setting root font-size as a percentage of the assumed 16px */
+    font-size: 62.5%; 
+}
+
+body {
+    padding: 3rem;
+    box-sizing: border-box;
+}

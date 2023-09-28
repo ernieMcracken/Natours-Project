@@ -1,0 +1,98 @@
+@use "sass:map";
+
+.u-center-text {
+    text-align: center;
+}
+
+.u-margin-bottom-8 {
+    margin-bottom: 8rem;
+}
+
+.u-margin-bottom-2 {
+    margin-bottom: 2rem;
+}
+
+// $icons: ("1": 1rem, "2": 2rem, );
+
+// @each $name, $glyph in $icons {
+//   .icon-#{$name}:before {
+//     display: inline-block;
+//     font-family: "Icon Font";
+//     content: $glyph;
+//   }
+// }
+
+$margins: ();
+$spacer: 1rem;
+
+
+// padding and margin
+$spacer: 1rem;
+$spacers: (
+    0: 0,
+    1: (
+        $spacer * 1,
+    ),
+    2: (
+        $spacer * 2,
+    ),
+    3: (
+        $spacer * 3,
+    ),
+    4: (
+        $spacer * 4,
+    ),
+    5: (
+        $spacer * 5,
+    ),
+    6: (
+        $spacer * 6,
+    ),
+    7: (
+        $spacer * 7,
+    ),
+    8: (
+        $spacer * 7,
+    ),
+);
+
+$xy-border: (
+  top: top,
+  bottom: bottom,
+  left: left,
+  right: right,
+);
+
+@each $prop, $letter in (margin: m, padding: p){
+    @each $unit, $rem in $spacers {
+        .u-#{$prop}-#{$unit} {
+            #{$prop}: $rem;
+        }
+    }
+}
+
+// padding and spacers
+@each $prop, $letter in (margin: m, padding: p) {
+    @each $unit, $rem in $spacers {
+    
+        .u-#{$prop}-x-#{$unit} {     
+            #{$prop}-left: $rem;
+            #{$prop}-right: $rem;
+        }
+        .u-#{$prop}-y-#{$unit} {
+            #{$prop}-top: $rem;
+            #{$prop}-bottom: $rem;
+        }
+    }
+}
+
+@each $prop, $letter in (margin: m, padding: p) {
+    @each $direction, $d in $xy-border {
+    // loop through the spacers we've set
+        @each $unit, $rem in $spacers {
+            .u-#{$prop}-#{$d}-#{$unit} {
+                #{$prop}-#{$direction}: #{$rem};
+            }
+        }
+    }
+}
