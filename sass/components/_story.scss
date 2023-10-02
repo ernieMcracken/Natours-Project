@@ -1,0 +1,66 @@
+@use "../abstracts/variables";
+
+.story {
+
+    width: 75%;
+    margin: 4rem auto;
+    box-shadow: variables.$box-shadow-active;
+    background-color: rgba(variables.$color-white, .7);
+    padding: 6rem;
+    padding-left: 9rem;
+    transform: skewX(-12deg);
+    
+
+    & > * {
+        transform: skewX(12deg);
+    }
+
+
+    &__shape {
+        width: 15rem;
+        height: 15rem;
+        float: left;
+        //element needs to be floated and have defined height / width
+        -webkit-shape-outside: circle(50% at 50% 50%);
+        shape-outside: circle(50% at 50% 50%);
+        -webkit-clip-path: circle(50% at 50% 50%);
+        clip-path: circle(50% at 50% 50%);
+        //need to skew back seperately as we can only have one transform 
+        transform: translateX(-2rem) skewX(12deg);
+        position: relative;
+
+    }
+
+    &__image {
+        height: 100%;
+        backface-visibility: hidden;
+        transition: all .2s;
+        transform: translateX(-4rem) scale(1.2);
+    }
+
+    &__caption {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -20%);
+        opacity: 0;
+        color: variables.$color-white;
+        text-transform: uppercase;
+        font-size: 1.7rem;
+        text-align: center;
+        transition: all .2s;
+        backface-visibility: hidden;
+    }
+
+    &:hover &__caption {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+
+    &:hover &__image {
+        filter: blur(2px) brightness(80%);
+        transform: translateX(-4rem) scale(1);
+
+    }
+    
+}

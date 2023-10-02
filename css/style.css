@@ -722,6 +722,9 @@ body {
   animation-fill-mode: backwards;
 }
 
+.btn-text {
+  padding: 0.5rem;
+}
 .btn-text:link, .btn-text:visited {
   display: inline-block;
   color: #55c57a;
@@ -795,6 +798,57 @@ body {
 .feature-box:hover {
   transform: translateY(-1rem) scale(1.05);
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+.story {
+  width: 75%;
+  margin: 4rem auto;
+  box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.2);
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 6rem;
+  padding-left: 9rem;
+  transform: skewX(-12deg);
+}
+.story > * {
+  transform: skewX(12deg);
+}
+.story__shape {
+  width: 15rem;
+  height: 15rem;
+  float: left;
+  -webkit-shape-outside: circle(50% at 50% 50%);
+  shape-outside: circle(50% at 50% 50%);
+  -webkit-clip-path: circle(50% at 50% 50%);
+  clip-path: circle(50% at 50% 50%);
+  transform: translateX(-2rem) skewX(12deg);
+  position: relative;
+}
+.story__image {
+  height: 100%;
+  backface-visibility: hidden;
+  transition: all 0.2s;
+  transform: translateX(-4rem) scale(1.2);
+}
+.story__caption {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -20%);
+  opacity: 0;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 1.7rem;
+  text-align: center;
+  transition: all 0.2s;
+  backface-visibility: hidden;
+}
+.story:hover .story__caption {
+  opacity: 1;
+  transform: translate(-50%, -50%);
+}
+.story:hover .story__image {
+  filter: blur(2px) brightness(80%);
+  transform: translateX(-4rem) scale(1);
 }
 
 .card {
@@ -910,6 +964,22 @@ body {
   font-size: 6rem;
 }
 
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.2;
+  overflow: hidden;
+}
+.bg-video__content {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .heading {
   height: 95vh;
   /* linerar grad is adding a color overlay to the image, gradient must be first. */
@@ -994,6 +1064,29 @@ body {
   background-color: #f7f7f7;
   padding: 40rem 3rem 10rem 3rem;
   margin-top: -20rem;
+}
+
+.section-stories {
+  padding: 15rem 0;
+  position: relative;
+}
+
+.section-bookings {
+  padding: 15rem 0;
+  background-image: linear-gradient(to right bottom, #7ed56f, #28b485);
+}
+
+.booking {
+  background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.7) 50%, transparent 50%), url("../img/nat-10.jpg");
+  background-size: cover;
+  height: 50rem;
+  border-radius: 3px;
+  box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.2);
+  margin: 0 auto;
+}
+.booking__form {
+  width: 50%;
+  padding: 6rem;
 }
 
 /*# sourceMappingURL=style.css.map */
