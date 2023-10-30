@@ -1,4 +1,6 @@
 @use "../abstracts/variables";
+@use "../abstracts/mixins";
+
 
 $card-height: 52rem;
 
@@ -178,5 +180,92 @@ $card-height: 52rem;
             font-weight: 100;
             font-size: 6rem;
         }
+    }
+
+    @media screen and (max-width: 56.25em), screen and (hover: none) {
+        perspective: 150rem;
+        position: relative;
+        height: auto;
+        box-shadow: 0 2rem 4rem rgba(variables.$color-black, .2);
+
+    
+        &__side{
+            height: auto;
+            position: relative;
+            border-top-right-radius: 0;
+            border-top-left-radius: 0;
+            box-shadow: none;
+
+
+
+            &--front {
+                padding-bottom: 10rem;
+                
+
+            }
+
+            &--back {
+                transform: rotateY(0deg);
+                height: auto;
+                clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+                margin-top: -8rem;
+                padding-top: 4rem;
+    
+                &-1 {
+                    background-image: linear-gradient(to right bottom, variables.$color-secondary-light, variables.$color-secondary-dark);
+                }
+    
+                &-2 {
+                    background-image: linear-gradient(to right bottom, variables.$color-primary-light, variables.$color-primary-dark);
+                }
+    
+                &-3 {
+                    background-image: linear-gradient(to right bottom, variables.$color-tertiary-light, variables.$color-tertiary-dark);
+    
+                }
+                
+            }
+        }
+    
+        &:hover &__side{
+    
+           
+            &--front {
+                transform: rotateY(0deg);
+            }
+    
+            &--back {
+                transform: rotateY(0deg);
+            }
+        }
+    
+    
+        &__cta {
+          
+            position: relative;
+            top: 0;
+            left: 0;
+            transform: translate(0);
+            width: 100%;
+            padding: 3rem;
+        
+        }
+    
+        &__price {
+    
+            margin-bottom: 2rem;
+            color: variables.$color-white;
+    
+            &--small {
+                font-weight: 300;
+                text-transform: uppercase;
+                font-size: 1.8rem;
+            }
+    
+            &--main {
+                font-weight: 100;
+                font-size: 6rem;
+            }
+        } 
     }
 }

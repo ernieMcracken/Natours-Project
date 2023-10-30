@@ -1,3 +1,5 @@
+@use '../abstracts/mixins';
+
 /* A basic CSS reset */
 
 *, *::before, *::after {
@@ -11,9 +13,29 @@ html {
     /* font-size: 10px; works but is bad practice */
     /* setting root font-size as a percentage of the assumed 16px */
     font-size: 62.5%; 
+
+    @include mixins.respond(big-desktop) {
+        font-size: 75%;
+    }
+
+    @include mixins.respond(tab-land) {
+        font-size: 56.25%;
+    }
+
+    @include mixins.respond(tab-port) {
+        font-size: 50%;
+    }
+
+   
+
+    
 }
 
 body {
     padding: 3rem;
     box-sizing: border-box;
+
+    @include mixins.respond(tab-port) {
+        padding: 0;
+    }
 }

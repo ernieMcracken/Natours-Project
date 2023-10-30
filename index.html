@@ -17,6 +17,21 @@
 </head>
 
 <body>
+    <div class="navigation">
+        <input type="checkbox" id="navigation-toggle" class="navigation__checkbox">
+        <label for="navigation-toggle" class="navigation__button"><span class="navigation__icon">&nbsp;</span></label>
+        <div class="navigation__background">&nbsp;</div>
+        <nav class="navigation__nav">
+            <ul class="navigation__list">
+                <li class="navigation__item"><a href="" class="navigation__link">About Natours</a></li>
+                <li class="navigation__item"><a href="" class="navigation__link">Your Benefits</a></li>
+                <li class="navigation__item"><a href="" class="navigation__link">Popular Tours</a></li>
+                <li class="navigation__item"><a href="" class="navigation__link">Stories</a></li>
+                <li class="navigation__item"><a href="" class="navigation__link">Book Now</a></li>
+
+            </ul>
+        </nav>
+    </div>
     <header class="heading">
         <div class="heading__logo-box">
             <img src="img/logo-white.png" alt="Natours Logo" class="heading__logo">
@@ -63,9 +78,10 @@
                 </div>
                 <div class="col-1-of-2">
                     <div class="composition">
-                        <img src="img/nat-1.jpg" alt="photo 1" class="composition__photo composition__photo--p1">
-                        <img src="img/nat-2.jpg" alt="photo 2" class="composition__photo composition__photo--p2">
-                        <img src="img/nat-3.jpg" alt="photo 3" class="composition__photo composition__photo--p3">
+
+                        <img src="img/nat-1.jpg" srcset="img/nat-1.jpg 300w, img/nat-1-large.jpg 1000w" sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px" alt="photo 1" class="composition__photo composition__photo--p1">
+                        <img src="img/nat-2.jpg" srcset="img/nat-2.jpg 300w, img/nat-2-large.jpg 1000w" sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px" alt="photo 2" class="composition__photo composition__photo--p2">
+                        <img src="img/nat-3.jpg" srcset="img/nat-3.jpg 300w, img/nat-3-large.jpg 1000w" sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px" alt="photo 3" class="composition__photo composition__photo--p3">
                     </div>
                 </div>
             </div>
@@ -161,7 +177,7 @@
                                         $297
                                     </p>
                                 </div>
-                                <a href="#" class="btn btn--white">Book Now</a>
+                                <a href="#popup" class="btn btn--white">Book Now</a>
                             </div>
                         </div>
                     </div>
@@ -197,7 +213,7 @@
                                         $497
                                     </p>
                                 </div>
-                                <a href="#" class="btn btn--white">Book Now</a>
+                                <a href="#popup" class="btn btn--white">Book Now</a>
                             </div>
                         </div>
                     </div>
@@ -233,7 +249,7 @@
                                         $1697
                                     </p>
                                 </div>
-                                <a href="#" class="btn btn--white">Book Now</a>
+                                <a href="#popup" class="btn btn--white">Book Now</a>
                             </div>
                         </div>
                     </div>
@@ -314,7 +330,26 @@
                             </div>
                             <div class="form__group">
                                 <input id="email" type="email" class="form__input" required placeholder="Email">
-                                <label for="email">Email</label>
+                                <label for="email" class="form__label">Email</label>
+                            </div>
+                            <div class="form__group u-margin-bottom-3">
+                                <div class="form__radio-group">
+                                    <input type="radio" class="form__radio-input" id="small" name="size">
+                                    <label for="small" class="form__radio-label">
+                                        <span class="form__radio-button"></span>
+                                        Small Tour Group
+                                    </label>
+                                </div>
+                                <div class="form__radio-group">
+                                    <input type="radio" class="form__radio-input" id="large" name="size">
+                                    <label for="large" class="form__radio-label">
+                                        <span class="form__radio-button"></span>
+                                        Large Tour Group
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form__group">
+                                <button class="btn btn--green">Next Step &rarr;</button>
                             </div>
                         </form>
                     </div>
@@ -324,9 +359,58 @@
 
     </main>
 
-    <footer>
+    <footer class="footer">
+        <div class="footer__logo-box">
+            <picture>
+                <source srcset="img/logo-green-small-1x.png 1x, img/logo-green-small-2x.png 2x" media="(max-width: 37.5em)">
+                <img srcset="img/logo-green-1x 1x, img/logo-green-2x.png 2x" alt="Natours Logo" class="footer__logo">
+
+            </picture>
+        </div>
+        <div class="row">
+            <div class="col-1-of-2 ">
+                <div class="footer__nav">
+                    <ul class="footer__nav-list">
+                        <li class="footer__nav-item"><a href="#" class="footer__link">Company</a></li>
+                        <li class="footer__nav-item"><a href="#" class="footer__link">Contact</a></li>
+                        <li class="footer__nav-item"><a href="#" class="footer__link">Careers</a></li>
+                        <li class="footer__nav-item"><a href="#" class="footer__link">Privacy</a></li>
+                        <li class="footer__nav-item"><a href="#" class="footer__link">Terms</a></li>
+
+                    </ul>
+                </div>
+            </div>
+            <div class="col-1-of-2">
+                <p class="footer__copyright">&copy Jonas Schemdtman</p>
+            </div>
+        </div>
+
 
     </footer>
+
+    <div class="popup" id="popup">
+        <div class="popup__content">
+            <div class="popup__left">
+                <div class="popup__image-box">
+                    <img src="img/nat-8.jpg" alt="Tour Photo" class="popup__img">
+                </div>
+
+                <div class="popup__image-box">
+                    <img src="img/nat-9.jpg" alt="Tour Photo" class="popup__img">
+                </div>
+            </div>
+            <div class="popup__right">
+                <h2 class="heading-secondary u-margin-bottom-2">Start booking now</h2>
+                <h3 class="heading-tertiary u-margin-bottom-2"> Important &ndash; Please read these terms before booking</h3>
+                <p class="popup__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor aperiam dolorum distinctio suscipit perferendis eos unde tenetur. Neque, animi facilis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore voluptatem neque eaque odit ex a sunt, fugiat obcaecati velit voluptates, quia asperiores maxime dolorum eveniet deserunt, natus eos consequuntur modi.</p>
+                <a href="#" class="btn btn--green">Book Now</a>
+            
+                <a href="#" class="popup__close">&times;</a>
+            
+            </div>
+            
+        </div>
+    </div>
 
     <!-- <section class="grid-test">
         <div class="row">

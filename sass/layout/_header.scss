@@ -1,13 +1,30 @@
 @use "../abstracts/variables";
+@use "../abstracts/mixins";
 
 .heading {
     height: 95vh;
     /* linerar grad is adding a color overlay to the image, gradient must be first. */
-    background-image: linear-gradient(to right bottom, rgba(variables.$color-primary-light, 0.8), rgba(variables.$color-primary-dark, 0.8)), url('../img/hero.jpg') ;
+    background-image: linear-gradient(to right bottom, rgba(variables.$color-primary-light, 0.8), rgba(variables.$color-primary-dark, 0.8)), url('../img/hero-small.jpg') ;
     background-size: cover;
     background-position: top;
     clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
     position: relative;
+
+    //use the higher resolution image only on high rest screens above 600px
+    @media (min-resolution: 192dpi) and (min-width: 600px),
+            (-webkit-min-device-pixel-ratio: 2) and (min-width: 600px), 
+            (min-width: 2000px) {
+        background-image: linear-gradient(to right bottom, rgba(variables.$color-secondary-light, 0.8), rgba(variables.$color-secondary-dark, 0.8)), url('../img/hero.jpg') ;
+    }
+
+
+
+    @include mixins.respond(phone) {
+        clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+
+    }
+
+
 
     &__logo-box {
         position: absolute;

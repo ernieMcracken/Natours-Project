@@ -66,7 +66,7 @@ $xy-border: (
 @each $prop, $letter in (margin: m, padding: p){
     @each $unit, $rem in $spacers {
         .u-#{$prop}-#{$unit} {
-            #{$prop}: $rem;
+            #{$prop}: $rem !important;
         }
     }
 }
@@ -76,12 +76,12 @@ $xy-border: (
     @each $unit, $rem in $spacers {
     
         .u-#{$prop}-x-#{$unit} {     
-            #{$prop}-left: $rem;
-            #{$prop}-right: $rem;
+            #{$prop}-left: $rem !important;
+            #{$prop}-right: $rem !important;
         }
         .u-#{$prop}-y-#{$unit} {
-            #{$prop}-top: $rem;
-            #{$prop}-bottom: $rem;
+            #{$prop}-top: $rem !important;
+            #{$prop}-bottom: $rem !important;
         }
     }
 }
@@ -91,7 +91,7 @@ $xy-border: (
     // loop through the spacers we've set
         @each $unit, $rem in $spacers {
             .u-#{$prop}-#{$d}-#{$unit} {
-                #{$prop}-#{$direction}: #{$rem};
+                #{$prop}-#{$direction}: #{$rem} !important; 
             }
         }
     }

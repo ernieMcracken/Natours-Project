@@ -2,14 +2,23 @@
 @use "../abstracts/mixins";
 
 .row {
-    max-width: 114rem;
+    max-width: variables.$grid-width;
     margin: 0 auto;
     
     @include mixins.clearfix;
 
     &:not(:last-child) {
         margin-bottom: variables.$gutter-vertical;
+
+        // @include mixins.respond(tab-port) {
+        //     margin-bottom: variables.$gutter-vertical-small;
+        // }
     
+    }
+
+    @include mixins.respond(tab-port) {
+        max-width: 50rem;
+        padding: 0 3rem;
     }
 
     // select all col classes and add margin right to all but the last child
@@ -18,6 +27,12 @@
 
         &:not(:last-child) {
             margin-right: variables.$gutter-horizontal;
+        }
+
+        @include mixins.respond(tab-port) {
+            width: 100% !important;
+            margin-right: 0;
+            margin-bottom: variables.$gutter-vertical-small;
         }
     }
 
@@ -45,4 +60,6 @@
         width: calc(3 *  ((100% - (#{variables.$gutter-horizontal} *3 )) / 4) + 2 * #{variables.$gutter-horizontal});
     }
 }
+
+
 
