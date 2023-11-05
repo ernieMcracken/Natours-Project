@@ -25,8 +25,6 @@
             border-bottom: .3rem solid variables.$color-primary
         }
 
-       
-
         &:focus:invalid {
             border-bottom-color: variables.$color-secondary-dark;
         }
@@ -35,9 +33,6 @@
             // color: variables.$color-grey-dark-2;
             color: variables.$color-grey-dark-2;
         }
-
-
-
     }
 
     &__label {

@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "comile:sass": "npx sass ./sass/main.scss ./css/style.css -w",
+    "compile:sass": "npx sass ./sass/main.scss ./css/style.css -w",
     "serve": "npx live-server"
   },
   "author": "",

@@ -34,6 +34,7 @@ $breakpoint options
 //and our queries will still work as expected. 
 @mixin respond($breakpoint) {
 
+    
     @if $breakpoint == phone {
         @media screen and (max-width: 37.5em) { //600px / 16px
             @content
